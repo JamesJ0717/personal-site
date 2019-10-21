@@ -1,11 +1,11 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { Link } from "gatsby"
 
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
+      background: "rebeccapurple",
       marginBottom: `1.45rem`,
     }}
   >
@@ -13,20 +13,37 @@ const Header = ({ siteTitle }) => (
       style={{
         margin: `0 auto`,
         maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        padding: `1rem 1rem`,
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
+      <h3 style={{ margin: 0 }}>
+        <Link style={{ textDecoration: "none", color: "white" }} to="/">
           {siteTitle}
         </Link>
-      </h1>
+      </h3>
+      <ul style={{ listStyle: "none", margin: 0, display: "flex" }}>
+        {/* <Link
+          style={{ textDecoration: "none", color: "white", margin: "0 10px" }}
+          to="/portfolio"
+        >
+          Portfolio
+        </Link> */}
+        <Link
+          style={{ textDecoration: "none", color: "white", margin: "0 10px" }}
+          to="/resume"
+        >
+          Resume
+        </Link>
+        <Link
+          style={{ textDecoration: "none", color: "white", margin: "0 10px" }}
+          to="/contact"
+        >
+          Contact
+        </Link>
+      </ul>
     </div>
   </header>
 )
