@@ -1,21 +1,23 @@
 import React, { Component } from "react"
+import { Col } from "react-bootstrap"
 import Layout from "../components/layout"
 
 export default class Resume extends Component {
   style = {
     height: "100vh",
-    width: "8.5in",
+    width: "100%",
   }
-  footer = { position: "fixed", bottom: "0px" }
   render() {
     return (
       <Layout>
-        <iframe
-          src="https://s3.amazonaws.com/jj-resume.pdf/JJ_Resume.pdf"
-          style={this.style}
-          frameborder="0"
-          title="JJ_Resume.pdf"
-        ></iframe>
+        <Col md="auto">
+          <iframe
+            typeof="application/pdf"
+            style={this.style}
+            title="JJ_Resume"
+            src="https://s3.amazonaws.com/jj-resume.pdf/JJ_Resume.pdf#toolbar=0"
+          ></iframe>
+        </Col>
       </Layout>
     )
   }
