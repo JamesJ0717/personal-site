@@ -25,12 +25,12 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h3>
       <ul style={{ listStyle: "none", margin: 0, display: "flex" }}>
-        {/* <Link
+        <Link
           style={{ textDecoration: "none", color: "white", margin: "0 10px" }}
           to="/portfolio"
         >
           Portfolio
-        </Link> */}
+        </Link>
         <Link
           style={{ textDecoration: "none", color: "white", margin: "0 10px" }}
           to="/resume"
