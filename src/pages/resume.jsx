@@ -17,6 +17,7 @@ export default class Resume extends Component {
           style={this.style}
           src="https://s3.amazonaws.com/jj-resume.pdf/JJ_Resume.pdf#toolbar=0"
           id="resume"
+          frameBorder="0"
         />
       </Layout>
     )

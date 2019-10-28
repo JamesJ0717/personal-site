@@ -1,51 +1,59 @@
 import PropTypes from "prop-types"
 import React from "react"
-import { Link } from "gatsby"
+import { Navbar, Nav } from "react-bootstrap"
 
 const Header = ({ siteTitle }) => (
-  <header
+  <Navbar
     style={{
-      background: "rebeccapurple",
-      marginBottom: `1.45rem`,
+      margin: `0 auto`,
+      marginBottom: "1.45rem",
+      padding: `1rem`,
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
     }}
+    expand="md"
+    variant="dark"
+    bg="primary"
+    sticky="top"
   >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1rem 1rem`,
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
-    >
-      <h3 style={{ margin: 0 }}>
-        <Link style={{ textDecoration: "none", color: "white" }} to="/">
-          {siteTitle}
-        </Link>
-      </h3>
-      <ul style={{ listStyle: "none", margin: 0, display: "flex" }}>
-        <Link
-          style={{ textDecoration: "none", color: "white", margin: "0 10px" }}
-          to="/portfolio"
+    <Navbar.Brand href="/">{siteTitle}</Navbar.Brand>
+    <Navbar.Toggle />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="mr-auto">
+        <Nav.Link
+          style={{
+            textDecoration: "none",
+            color: "white",
+            margin: "0 10px",
+          }}
+          href="/portfolio"
         >
           Portfolio
-        </Link>
-        <Link
-          style={{ textDecoration: "none", color: "white", margin: "0 10px" }}
-          to="/resume"
+        </Nav.Link>
+        <Nav.Link
+          style={{
+            textDecoration: "none",
+            color: "white",
+            margin: "0 10px",
+          }}
+          href="/resume"
         >
           Resume
-        </Link>
-        <Link
-          style={{ textDecoration: "none", color: "white", margin: "0 10px" }}
-          to="/contact"
+        </Nav.Link>
+        <Nav.Link
+          style={{
+            textDecoration: "none",
+            color: "white",
+            margin: "0 10px",
+          }}
+          href="/contact"
         >
           Contact
-        </Link>
-      </ul>
-    </div>
-  </header>
+        </Nav.Link>
+      </Nav>
+    </Navbar.Collapse>
+  </Navbar>
 )
 
 Header.propTypes = {

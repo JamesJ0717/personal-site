@@ -14,7 +14,7 @@ export default ({ data }) => {
     }
 
     return (
-      <Col sm={12} lg={6}>
+      <Col sm={12} md={6} lg={6}>
         <Card key={node.frontmatter.title}>
           <Card.Header>
             <Card.Title>
@@ -52,8 +52,6 @@ export default ({ data }) => {
 
   return (
     <Layout>
-
-
       <h2>Portfolio</h2>
       <CardDeck>
         {data.allMarkdownRemark.edges.map(({ node }) => displayProjects(node))}
