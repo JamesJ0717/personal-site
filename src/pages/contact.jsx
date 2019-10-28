@@ -5,15 +5,9 @@ export default class Contact extends Component {
     return (
       <Layout>
         <div className="content">
-          {/* Name
-                    Email:
-                    Twitter
-                    Github
-                    Linkedin
-                */}
           <p>
             If you would like to contact me, please send an email to{" "}
-            <a href="contact@jamesjohnson.io">contact@jamesjohnson.io</a>.
+            <a href="me@jamesjohnson.io">me@jamesjohnson.io</a>.
           </p>
           <p>
             You can also reach out on Twitter. I am{" "}

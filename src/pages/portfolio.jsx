@@ -1,60 +1,66 @@
 import React from "react"
-import { Card, CardDeck, Button } from "react-bootstrap"
 import { Link, graphql } from "gatsby"
-
 import Layout from "../components/layout"
+import { Card, CardDeck, Button, Col } from "react-bootstrap"
 
-function displayProjects(node) {
-  return (
-    <div className="col-6">
-      <Card key={node.frontmatter.title}>
-        <Card.Header>
-          <Card.Title>
-            <Link to={"/portfolio/" + node.fields.slug}>
-              {node.frontmatter.title} <p>{node.frontmatter.date}</p>
-            </Link>
-          </Card.Title>
-        </Card.Header>
-        <Card.Body>
-          <Card.Text>{node.excerpt}</Card.Text>
-        </Card.Body>
-        <Card.Footer>
-          <Button
-            href={"https://github.com/jamesj0717/" + node.frontmatter.title}
-          >
-            View Code
-          </Button>
-          <Button
-            href={"https://" + node.frontmatter.title + ".jamesjohnson.io"}
-          >
-            View Site
-          </Button>
-        </Card.Footer>
-      </Card>
-    </div>
-  )
-}
+export default ({ data }) => {
+  var displayProjects = node => {
+    const siteStyle = {
+      visibility: node.frontmatter.site == null ? "hidden" : "visible",
+    }
 
-const portfolio = ({ data }) => {
+    const style = {
+      fontSize: "12pt",
+    }
+
+    return (
+      <Col sm={12} lg={6}>
+        <Card key={node.frontmatter.title}>
+          <Card.Header>
+            <Card.Title>
+              <Link to={"/portfolio/" + node.fields.slug}>
+                {node.frontmatter.title}
+              </Link>
+              <p style={style}>{node.frontmatter.date}</p>
+            </Card.Title>
+          </Card.Header>
+          <Card.Body>
+            <Card.Text>{node.excerpt}</Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <Button
+              block
+              href={
+                "https://www.github.com/JamesJ0717/" + node.frontmatter.repo
+              }
+            >
+              View Code
+            </Button>
+            <Button
+              block
+              style={siteStyle}
+              href={"https://" + node.frontmatter.site + ".jamesjohnson.io"}
+            >
+              View Site
+            </Button>
+          </Card.Footer>
+        </Card>
+        <p></p>
+      </Col>
+    )
+  }
+
   return (
     <Layout>
-      <link
-        rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous"
-      />
 
-      <h1>Portfolio</h1>
-      <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+
+      <h2>Portfolio</h2>
       <CardDeck>
         {data.allMarkdownRemark.edges.map(({ node }) => displayProjects(node))}
       </CardDeck>
     </Layout>
   )
 }
-
-export default portfolio
 
 export const query = graphql`
   query {
@@ -65,7 +71,9 @@ export const query = graphql`
           id
           frontmatter {
             title
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "MMMM DD, YYYY")
+            repo
+            site
           }
           fields {
             slug
