@@ -17,7 +17,9 @@ const Header = ({ siteTitle }) => (
     bg="primary"
     sticky="top"
   >
-    <Navbar.Brand href="/">{siteTitle}</Navbar.Brand>
+    <Navbar.Brand href="/">
+      <h3>{siteTitle}</h3>
+    </Navbar.Brand>
     <Navbar.Toggle />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto">

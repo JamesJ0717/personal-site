@@ -18,9 +18,7 @@ export default ({ data }) => {
         <Card key={node.frontmatter.title}>
           <Card.Header>
             <Card.Title>
-              <Link to={"/portfolio/" + node.fields.slug}>
-                {node.frontmatter.title}
-              </Link>
+              <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
               <p style={style}>{node.frontmatter.date}</p>
             </Card.Title>
           </Card.Header>
