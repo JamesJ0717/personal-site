@@ -1,9 +1,9 @@
 {
   "name": "jj-personal-site",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "My Personal Site",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "James Johnson <me@jamesjohnson.io>",
   "dependencies": {
     "@emotion/core": "^10.0.21",
     "gatsby": "^2.16.1",

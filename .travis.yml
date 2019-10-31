@@ -16,6 +16,7 @@ deploy:
   keep-history: true
   github-token: $GITHUB_TOKEN
   local-dir: public
+  fqdn: https://www.jamesjohnson.io
   target-branch: master
   on:
     branch: dev
