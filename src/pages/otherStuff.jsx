@@ -8,6 +8,15 @@ export default ({ data }) => {
     var siteStyle = {
       visibility: node.frontmatter.site == null ? "hidden" : "visible",
     }
+    var codeStyle = {
+      visibility: node.frontmatter.repo == null ? "hidden" : "visible",
+    }
+    var footerStyle = {
+      visibility:
+        node.frontmatter.repo != null || node.frontmatter.site != null
+          ? "visible"
+          : "hidden",
+    }
 
     var style = {
       fontSize: "12pt",
@@ -25,9 +34,10 @@ export default ({ data }) => {
           <Card.Body>
             <Card.Text>{node.excerpt}</Card.Text>
           </Card.Body>
-          <Card.Footer>
+          <Card.Footer style={footerStyle}>
             <Button
               block
+              style={codeStyle}
               href={
                 "https://www.github.com/JamesJ0717/" + node.frontmatter.repo
               }
