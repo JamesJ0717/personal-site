@@ -3,7 +3,7 @@ cache:
   directories:
     - ~/.npm
 notifications:
-  slack: jamesj0717:Gc9BvcvGMV1nKdxMMJdpCD3B
+  slack: jamesj0717:$SLACK_TOKEN
 node_js:
   - "10"
 git:
