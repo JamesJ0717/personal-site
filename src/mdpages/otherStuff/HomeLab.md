@@ -2,8 +2,9 @@
 title: HomeLab
 date: 2019-10-28
 parent: other
+
 ---
 
-A HomeLab is a place for people to play around with new technologies or equipment. I heard about these when on Reddit. The community of HomeLabers has a subreddit, [/r/HomeLab][1], which
+A HomeLab is a place for people to play around with new technologies or equipment. I heard about these when on Reddit. The community of HomeLabers has a subreddit, [/r/HomeLab][1], which is a great place to learn.
 
-[1]: https://www.reddit.com/r/homelab
+[1]:	https://www.reddit.com/r/homelab
