@@ -47,13 +47,12 @@ export default ({ data }) => {
       </Col>
     )
   }
-
   return (
     <Layout>
-      <h2>Portfolio</h2>
+      <h2>Other Stuff</h2>
       <CardDeck>
         {data.allMarkdownRemark.edges.map(({ node }) => {
-          if (node.frontmatter.parent === "portfolio") {
+          if (node.frontmatter.parent === "other") {
             return displayProjects(node)
           } else {
             return null

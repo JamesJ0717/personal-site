@@ -1,69 +1,50 @@
-import PropTypes from "prop-types"
 import React from "react"
 import { Navbar, Nav } from "react-bootstrap"
+import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
-  <Navbar
-    style={{
-      margin: `0 auto`,
-      marginBottom: "1.45rem",
-      padding: `1rem`,
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-    }}
-    expand="md"
-    variant="dark"
-    bg="primary"
-    sticky="top"
-  >
-    <Navbar.Brand href="/">
-      <h3>{siteTitle}</h3>
-    </Navbar.Brand>
-    <Navbar.Toggle />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="mr-auto">
-        <Nav.Link
-          style={{
-            textDecoration: "none",
-            color: "white",
-            margin: "0 10px",
-          }}
-          href="/portfolio"
-        >
-          Portfolio
-        </Nav.Link>
-        <Nav.Link
-          style={{
-            textDecoration: "none",
-            color: "white",
-            margin: "0 10px",
-          }}
-          href="/resume"
-        >
-          Resume
-        </Nav.Link>
-        <Nav.Link
-          style={{
-            textDecoration: "none",
-            color: "white",
-            margin: "0 10px",
-          }}
-          href="/contact"
-        >
-          Contact
-        </Nav.Link>
-      </Nav>
-    </Navbar.Collapse>
-  </Navbar>
-)
+export default () => {
+  var linkstyle = {
+    textDecoration: "none",
+    color: "white",
+    margin: "0 10px",
+  }
+  var barstyle = {
+    margin: `0 auto`,
+    marginBottom: "1.45rem",
+    padding: `1rem`,
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  }
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+  return (
+    <Navbar
+      style={barstyle}
+      expand="md"
+      variant="dark"
+      bg="primary"
+      sticky="top"
+    >
+      <Link style={linkstyle} to="/">
+        <h3>James Johnson</h3>
+      </Link>
+      <Navbar.Toggle />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          <Link style={linkstyle} to="/otherStuff">
+            Other Stuff
+          </Link>
+          <Link style={linkstyle} to="/portfolio">
+            Portfolio
+          </Link>
+          <Link style={linkstyle} to="/resume">
+            Resume
+          </Link>
+          <Link style={linkstyle} to="/contact">
+            Contact
+          </Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  )
 }
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header

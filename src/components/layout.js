@@ -1,25 +1,14 @@
 import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 
 import "./layout.css"
 // import CustomNavbar from "./CustomNavbar"
 import Header from "./header"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header />
       <div
         style={{
           margin: `0 auto`,
@@ -28,6 +17,7 @@ const Layout = ({ children }) => {
           paddingTop: 0,
         }}
       >
+        <link rel="stylesheet" href="https://cdnjs.com/libraries/pdf.js" />
         <link
           rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -39,14 +29,12 @@ const Layout = ({ children }) => {
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <span> - </span>
+          <Link to="/">Go Home</Link>
         </footer>
       </div>
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

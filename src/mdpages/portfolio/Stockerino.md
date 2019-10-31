@@ -3,6 +3,8 @@ title: Stockerino
 date: "2019-10-20"
 repo: "CS490-Stockerino"
 site: "stockerino"
+parent: portfolio
+
 ---
 
 Stockerino is an app I started building for my CS490 class. The class was called _Cross Platform Mobile Development with Dart and Flutter_. In this class, we were tasked with building an app using Dart and Flutter. My original idea was super complex; I wanted to make an app that would allow students to better keep track of assignments and exams, something along the lines of a day planner, but in app form and aimed towards students. After I was working on this idea for a few days, I realized there are a lot of complex things I did not think of originally. When my teacher talked about some of the apps made in the past, I noticed how simple they seemed. Thats when I decided on making a stock ticker, as I can make it as simple or as complex as I feel.
