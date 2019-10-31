@@ -4,7 +4,6 @@ date: "2018-10-20"
 repo: "OPCS"
 site: "opcs"
 parent: portfolio
-
 ---
 
 OPCS is the culmination of a semesters long work on creating an online programming competition site. For my CS370 Software Engineering class, the instructor broke the class up into groups and then gave the groups a project. My group was given this programming competition.
@@ -30,5 +29,5 @@ While doing this, I was interested in making the site look good too. I began loo
 - CSS
 - Nginx
 
-[1]:	https://www.npmjs.com/package/dockerode
-[2]:	https://www.npmjs.com/package/vue-sweetalert2
+[1]: https://www.npmjs.com/package/dockerode
+[2]: https://www.npmjs.com/package/vue-sweetalert2
