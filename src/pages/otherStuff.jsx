@@ -5,21 +5,23 @@ import { Link, graphql } from "gatsby"
 
 export default ({ data }) => {
   var displayProjects = node => {
+    var style = {
+      fontSize: "12pt",
+    }
+
     var siteStyle = {
-      visibility: node.frontmatter.site == null ? "hidden" : "visible",
+      visibility: node.frontmatter.site != null ? "visible" : "hidden",
     }
-    var codeStyle = {
-      visibility: node.frontmatter.repo == null ? "hidden" : "visible",
+
+    var repoStyle = {
+      visibility: node.frontmatter.repo != null ? "visible" : "hidden",
     }
+
     var footerStyle = {
       visibility:
         node.frontmatter.repo != null || node.frontmatter.site != null
           ? "visible"
           : "hidden",
-    }
-
-    var style = {
-      fontSize: "12pt",
     }
 
     return (
@@ -37,13 +39,14 @@ export default ({ data }) => {
           <Card.Footer style={footerStyle}>
             <Button
               block
-              style={codeStyle}
+              style={repoStyle}
               href={
                 "https://www.github.com/JamesJ0717/" + node.frontmatter.repo
               }
             >
               View Code
             </Button>
+
             <Button
               block
               style={siteStyle}
