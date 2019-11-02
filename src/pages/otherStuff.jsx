@@ -9,23 +9,41 @@ export default ({ data }) => {
       fontSize: "12pt",
     }
 
-    var siteStyle = {
-      visibility: node.frontmatter.site != null ? "visible" : "hidden",
-    }
+    var siteButton, repoButton, footer
 
-    var repoStyle = {
-      visibility: node.frontmatter.repo != null ? "visible" : "hidden",
-    }
+    if (node.frontmatter.repo != null || node.frontmatter.site != null) {
+      if (node.frontmatter.site != null) {
+        siteButton = (
+          <Button
+            href={"https://" + node.frontmatter.site + ".jamesjohnson.io"}
+          >
+            View Site
+          </Button>
+        )
+      } else {
+        siteButton = null
+      }
 
-    var footerStyle = {
-      visibility:
-        node.frontmatter.repo != null || node.frontmatter.site != null
-          ? "visible"
-          : "hidden",
+      if (node.frontmatter.repo != null) {
+        repoButton = (
+          <Button
+            href={"https://www.github.com/JamesJ0717/" + node.frontmatter.repo}
+          >
+            View Code
+          </Button>
+        )
+      } else {
+        repoButton = null
+      }
+      footer = (
+        <Card.Footer>
+          {repoButton}
+          {siteButton}
+        </Card.Footer>
+      )
     }
-
     return (
-      <Col sm={12} md={6} lg={6}>
+      <Col key={node.frontmatter.title} sm={12} md={6} lg={6}>
         <Card key={node.frontmatter.title}>
           <Card.Header>
             <Card.Title>
@@ -36,33 +54,17 @@ export default ({ data }) => {
           <Card.Body>
             <Card.Text>{node.excerpt}</Card.Text>
           </Card.Body>
-          <Card.Footer style={footerStyle}>
-            <Button
-              block
-              style={repoStyle}
-              href={
-                "https://www.github.com/JamesJ0717/" + node.frontmatter.repo
-              }
-            >
-              View Code
-            </Button>
-
-            <Button
-              block
-              style={siteStyle}
-              href={"https://" + node.frontmatter.site + ".jamesjohnson.io"}
-            >
-              View Site
-            </Button>
-          </Card.Footer>
+          {footer}
         </Card>
         <p></p>
       </Col>
     )
   }
+
   return (
     <Layout>
       <h2>Other Stuff</h2>
+      <hr />
       <CardDeck>
         {data.allMarkdownRemark.edges.map(({ node }) => {
           if (node.frontmatter.parent === "other") {

@@ -2,7 +2,7 @@
 title: OPCS
 date: "2018-10-20"
 repo: "OPCS"
-site: "opcs"
+site:
 parent: portfolio
 ---
 
@@ -29,5 +29,5 @@ While doing this, I was interested in making the site look good too. I began loo
 - CSS
 - Nginx
 
-[1]: https://www.npmjs.com/package/dockerode
-[2]: https://www.npmjs.com/package/vue-sweetalert2
+[1]:	https://www.npmjs.com/package/dockerode
+[2]:	https://www.npmjs.com/package/vue-sweetalert2

@@ -2,7 +2,7 @@
 title: Media Subdomain
 date: "2019-01-20"
 repo: "Media-Site"
-site: "media-site"
+site:
 parent: portfolio
 
 ---
