@@ -1,6 +1,5 @@
 import React from "react"
 import { Navbar, NavDropdown, Nav } from "react-bootstrap"
-import { Link } from "gatsby"
 
 export default () => {
   var linkstyle = {
@@ -16,15 +15,11 @@ export default () => {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    backgroundColor: "#11CCCC",
   }
 
   return (
-    <Navbar
-      style={barstyle}
-      expand="md"
-      variant="light"
-      style={{ backgroundColor: "#11CCCC", marginBottom: "20px" }}
-    >
+    <Navbar expand="md" variant="light" style={barstyle}>
       <Navbar.Brand href="/">James Johnson</Navbar.Brand>
 
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
