@@ -1,13 +1,14 @@
 import React from "react"
-import { Navbar, Nav } from "react-bootstrap"
+import { Navbar, NavDropdown, Nav } from "react-bootstrap"
 import { Link } from "gatsby"
 
 export default () => {
   var linkstyle = {
     textDecoration: "none",
-    color: "white",
+    color: "black",
     margin: "0 10px",
   }
+
   var barstyle = {
     margin: `0 auto`,
     marginBottom: "1.45rem",
@@ -21,28 +22,24 @@ export default () => {
     <Navbar
       style={barstyle}
       expand="md"
-      variant="dark"
-      bg="primary"
-      sticky="top"
+      variant="light"
+      style={{ backgroundColor: "#11CCCC", marginBottom: "20px" }}
     >
-      <Link style={linkstyle} to="/">
-        <h3>James Johnson</h3>
-      </Link>
-      <Navbar.Toggle />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <Link style={linkstyle} to="/otherStuff">
-            Other Stuff
-          </Link>
-          <Link style={linkstyle} to="/portfolio">
-            Portfolio
-          </Link>
-          <Link style={linkstyle} to="/resume">
-            Resume
-          </Link>
-          <Link style={linkstyle} to="/contact">
-            Contact
-          </Link>
+      <Navbar.Brand href="/">James Johnson</Navbar.Brand>
+
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse className="justify-content-end">
+        <Nav>
+          <NavDropdown style={linkstyle} title="Other Stuff">
+            <NavDropdown.Item href="/otherStuff">Other Stuff</NavDropdown.Item>
+            <NavDropdown.Item href="/otherStuff/Fall2019CNYHackathon">
+              Fall 2019 CNY Hackathon
+            </NavDropdown.Item>
+          </NavDropdown>
+
+          <Nav.Link href="/portfolio">Portfolio</Nav.Link>
+          <Nav.Link href="/resume">Resume</Nav.Link>
+          <Nav.Link href="/contact">Contact</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
