@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import { CardDeck, Card, Col, Button } from "react-bootstrap"
+import { CardDeck, Card, Col, Button, Row } from "react-bootstrap"
 import { Link, graphql } from "gatsby"
 
 export default ({ data }) => {
@@ -37,8 +37,10 @@ export default ({ data }) => {
       }
       footer = (
         <Card.Footer>
-          {repoButton}
-          {siteButton}
+          <Row>
+            <Col>{repoButton}</Col>
+            <Col>{siteButton}</Col>
+          </Row>
         </Card.Footer>
       )
     }

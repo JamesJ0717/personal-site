@@ -73,9 +73,9 @@ The Web server is an internal service that is scored from outside the router.
 
 #### Web Content
 
-Green: Page is served with no errors (Full functionality)
-Yellow: Page is served with some errors (Limited functionality, site is still up)
-Red: Completely incorrect content / no content
+- Green: Page is served with no errors (Full functionality)
+- Yellow: Page is served with some errors (Limited functionality, site is still up)
+- Red: Completely incorrect content / no content
 
 ---- 
 
@@ -114,28 +114,28 @@ The shell server is an externally-faced SSH and FTP server allowing access to th
 
 #### SSH
 
-Green: Angela Moss is able to log in via SSH key
-Yellow: SSH is up, Angela Moss is unable to login
-Red: SSH is down (Port closed, invalid response from SSH)
+- Green: Angela Moss is able to log in via SSH key
+- Yellow: SSH is up, Angela Moss is unable to login
+- Red: SSH is down (Port closed, invalid response from SSH)
 
 #### FTP Service
 
-Green: Elliot Alderson is able to log in via FTP
-Yellow: FTP is up, Elliot Alderson is unable to login or retrieve file
-Red: FTP is down (Port closed, invalid response from FTP)
+- Green: Elliot Alderson is able to log in via FTP
+- Yellow: FTP is up, Elliot Alderson is unable to login or retrieve file
+- Red: FTP is down (Port closed, invalid response from FTP)
 
 #### FTP Content
 
-Green: Elliot Alderson is able to retrieve file with _proper_ contents
-Yellow: Elliot Alderson is able to retrieve file, but contents are wrong
-Red: FTP is down, or Elliot Alderson is unable to retrieve file 
+- Green: Elliot Alderson is able to retrieve file with _proper_ contents
+- Yellow: Elliot Alderson is able to retrieve file, but contents are wrong
+- Red: FTP is down, or Elliot Alderson is unable to retrieve file 
 
 ### Legitimate Users
 
-Giddeon Goddard
-Ben Rappaport
-Angela Moss
-Elliot Alderson
+- Giddeon Goddard
+- Ben Rappaport
+- Angela Moss
+- Elliot Alderson
 
 ---- 
 

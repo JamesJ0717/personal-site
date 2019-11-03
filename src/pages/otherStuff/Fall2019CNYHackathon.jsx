@@ -64,6 +64,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <h2>Fall 2019 Hackathon</h2>
+      <hr />
       <CardDeck>
         {data.allMarkdownRemark.edges.map(({ node }) => {
           if (node.frontmatter.parent === "fall2019hackathon") {

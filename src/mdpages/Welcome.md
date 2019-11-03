@@ -6,7 +6,7 @@ parent: home
 
 ## Hi Everybody
 
-Welcome to my website. This is going to be like a blog site, but also like a portfolio. 
+Welcome to my website. This is going to be like a blog site, but also like a portfolio, but also including _'posts'_ about things I do or am working on that are fun. 
 
 #### Purpose
 
