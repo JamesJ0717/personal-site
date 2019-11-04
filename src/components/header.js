@@ -1,11 +1,10 @@
 import React from "react"
-import { Navbar, NavDropdown, Nav } from "react-bootstrap"
+import { Navbar, Nav, NavDropdown } from "react-bootstrap"
 
 export default () => {
   var linkstyle = {
     textDecoration: "none",
     color: "black",
-    margin: "0 10px",
   }
 
   var barstyle = {
@@ -20,7 +19,9 @@ export default () => {
 
   return (
     <Navbar expand="md" variant="light" style={barstyle}>
-      <Navbar.Brand href="/">James Johnson</Navbar.Brand>
+      <Navbar.Brand style={{ fontSize: "20pt" }} href="/">
+        James Johnson
+      </Navbar.Brand>
 
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className="justify-content-end">
@@ -32,9 +33,15 @@ export default () => {
             </NavDropdown.Item>
           </NavDropdown>
 
-          <Nav.Link href="/portfolio">Portfolio</Nav.Link>
-          <Nav.Link href="/resume">Resume</Nav.Link>
-          <Nav.Link href="/contact">Contact</Nav.Link>
+          <Nav.Link href="/portfolio" style={linkstyle}>
+            Portfolio
+          </Nav.Link>
+          <Nav.Link href="/resume" style={linkstyle}>
+            Resume
+          </Nav.Link>
+          <Nav.Link href="/contact" style={linkstyle}>
+            Contact
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
