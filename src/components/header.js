@@ -1,13 +1,12 @@
 import React from "react"
-import { Navbar, Nav } from "react-bootstrap"
-import { Link } from "gatsby"
+import { Navbar, Nav, NavDropdown } from "react-bootstrap"
 
 export default () => {
   var linkstyle = {
     textDecoration: "none",
-    color: "white",
-    margin: "0 10px",
+    color: "black",
   }
+
   var barstyle = {
     margin: `0 auto`,
     marginBottom: "1.45rem",
@@ -15,34 +14,34 @@ export default () => {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    backgroundColor: "#11CCCC",
   }
 
   return (
-    <Navbar
-      style={barstyle}
-      expand="md"
-      variant="dark"
-      bg="primary"
-      sticky="top"
-    >
-      <Link style={linkstyle} to="/">
-        <h3>James Johnson</h3>
-      </Link>
-      <Navbar.Toggle />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <Link style={linkstyle} to="/otherStuff">
-            Other Stuff
-          </Link>
-          <Link style={linkstyle} to="/portfolio">
+    <Navbar expand="md" variant="light" style={barstyle}>
+      <Navbar.Brand style={{ fontSize: "20pt" }} href="/">
+        James Johnson
+      </Navbar.Brand>
+
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse className="justify-content-end">
+        <Nav>
+          <NavDropdown style={linkstyle} title="Other Stuff">
+            <NavDropdown.Item href="/otherStuff">Other Stuff</NavDropdown.Item>
+            <NavDropdown.Item href="/otherStuff/Fall2019CNYHackathon">
+              Fall 2019 CNY Hackathon
+            </NavDropdown.Item>
+          </NavDropdown>
+
+          <Nav.Link href="/portfolio" style={linkstyle}>
             Portfolio
-          </Link>
-          <Link style={linkstyle} to="/resume">
+          </Nav.Link>
+          <Nav.Link href="/resume" style={linkstyle}>
             Resume
-          </Link>
-          <Link style={linkstyle} to="/contact">
+          </Nav.Link>
+          <Nav.Link href="/contact" style={linkstyle}>
             Contact
-          </Link>
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

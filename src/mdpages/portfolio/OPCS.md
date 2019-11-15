@@ -2,9 +2,8 @@
 title: OPCS
 date: "2018-10-20"
 repo: "OPCS"
-site: "opcs"
+site:
 parent: portfolio
-
 ---
 
 OPCS is the culmination of a semesters long work on creating an online programming competition site. For my CS370 Software Engineering class, the instructor broke the class up into groups and then gave the groups a project. My group was given this programming competition.

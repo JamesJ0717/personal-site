@@ -1,20 +1,51 @@
 import React from "react"
 import Layout from "../components/layout"
-import { CardDeck, Card, Col, Button } from "react-bootstrap"
+import { CardDeck, Card, Col, Button, Row } from "react-bootstrap"
 import { Link, graphql } from "gatsby"
 
 export default ({ data }) => {
   var displayProjects = node => {
-    var siteStyle = {
-      visibility: node.frontmatter.site == null ? "hidden" : "visible",
-    }
-
     var style = {
       fontSize: "12pt",
     }
 
+    var siteButton, repoButton, footer
+
+    if (node.frontmatter.repo != null || node.frontmatter.site != null) {
+      if (node.frontmatter.site != null) {
+        siteButton = (
+          <Button
+            href={"https://" + node.frontmatter.site + ".jamesjohnson.io"}
+          >
+            View Site
+          </Button>
+        )
+      } else {
+        siteButton = null
+      }
+
+      if (node.frontmatter.repo != null) {
+        repoButton = (
+          <Button
+            href={"https://www.github.com/JamesJ0717/" + node.frontmatter.repo}
+          >
+            View Code
+          </Button>
+        )
+      } else {
+        repoButton = null
+      }
+      footer = (
+        <Card.Footer>
+          <Row>
+            <Col>{repoButton}</Col>
+            <Col>{siteButton}</Col>
+          </Row>
+        </Card.Footer>
+      )
+    }
     return (
-      <Col sm={12} md={6} lg={6}>
+      <Col key={node.frontmatter.title} sm={12} md={6} lg={6}>
         <Card key={node.frontmatter.title}>
           <Card.Header>
             <Card.Title>
@@ -25,31 +56,17 @@ export default ({ data }) => {
           <Card.Body>
             <Card.Text>{node.excerpt}</Card.Text>
           </Card.Body>
-          <Card.Footer>
-            <Button
-              block
-              href={
-                "https://www.github.com/JamesJ0717/" + node.frontmatter.repo
-              }
-            >
-              View Code
-            </Button>
-            <Button
-              block
-              style={siteStyle}
-              href={"https://" + node.frontmatter.site + ".jamesjohnson.io"}
-            >
-              View Site
-            </Button>
-          </Card.Footer>
+          {footer}
         </Card>
         <p></p>
       </Col>
     )
   }
+
   return (
     <Layout>
       <h2>Other Stuff</h2>
+      <hr />
       <CardDeck>
         {data.allMarkdownRemark.edges.map(({ node }) => {
           if (node.frontmatter.parent === "other") {

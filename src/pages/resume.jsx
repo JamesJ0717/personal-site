@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import "pdfjs-dist"
 import Layout from "../components/layout"
 
 export default class Resume extends Component {
