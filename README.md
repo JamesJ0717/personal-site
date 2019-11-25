@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/JamesJ0717/personal-site.svg?style=svg)](https://circleci.com/gh/JamesJ0717/personal-site)
+
 
 This is my personal site. Here. Everything you see here was written by me (except for the framework). I have written and rewritten this site about 4 or 5 times since I realized I should have one. The first time I used Vue, since it was a new framework I was learning about and thought it was pretty cool to have component based sites. After Vue, I almost decided to just write it in plain HTML! But I realized I was in 2018 at the time so I better use a framework. I decided to take a look at React. React and Vue are pretty similar, because of the component based nature of both of them. Now, I decided to use Gatsby. I _**REALLY**_ like Gatsby right now, because of the plugins it has. Specifically, the various transformer plugins that allows Gatsby to convert Markdown files into nice looking pages. This page is written in Markdown and is converted to this.
 
