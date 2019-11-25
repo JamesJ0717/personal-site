@@ -34,3 +34,25 @@ jobs:
 
       # run tests!
       - run: yarn test
+      
+  deploy:
+    docker:
+      - image: circleci/node
+      
+    steps: 
+      - checkout
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Install GH_Pages
+          command: |
+            npm install -g --silent gh-pages
+            git config user.email me@jamesjohnson.io
+            git config user.name  "James Johnson"
+      - add_ssh_keys:
+          fingerprints:
+            - "9f:a1:11:79:24:ac:47:bd:6f:b1:90:32:4d:49:94:81"
+      - run:
+          name: Deploy to GH_Pages
+          command: gh-pages --dist ~/repo/build --branch master
+          
