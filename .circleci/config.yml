@@ -43,7 +43,7 @@ jobs:
 #           command: gh-pages --dist ~/repo/build --branch master
 
 orbs:
-  gh-pages: sugarshin/gh-pages
+  gh-pages: sugarshin/gh-pages@0.0.6
 
 workflows:
   build-and-deploy:
