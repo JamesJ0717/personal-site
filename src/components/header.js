@@ -28,6 +28,9 @@ export default () => {
         <Nav>
           <NavDropdown style={linkstyle} title="Other Stuff">
             <NavDropdown.Item href="/otherStuff">Other Stuff</NavDropdown.Item>
+            <NavDropdown.Item href="/otherStuff/Pentesting">
+              Pentesting
+            </NavDropdown.Item>
             <NavDropdown.Item href="/otherStuff/Fall2019CNYHackathon">
               Fall 2019 CNY Hackathon
             </NavDropdown.Item>
