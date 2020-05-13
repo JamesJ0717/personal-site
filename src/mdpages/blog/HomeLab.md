@@ -1,7 +1,7 @@
 ---
 title: HomeLab
 date: 2019-10-28
-parent: other
+parent: blog
 ---
 
 A HomeLab is a place for people to play around with new technologies or equipment. I heard about these when on Reddit. The community of HomeLabers has a subreddit, [/r/HomeLab][1], which is a great place to learn. HomeLabs can be as simple as an old computer or as in-depth as a full '42U Rack'.
@@ -16,8 +16,8 @@ Proxmox is an awesome piece of software. It takes virtualization to a whole othe
 
 I like this since everything can be done remotely. I can go to the website and make a new VM just about anywhere I am. It's really that simple.
 
-[1]:	https://www.reddit.com/r/homelab
-[2]:	https://www.proxmox.com
-[3]:	https://www.virtualbox.org
-[4]:	https://www.vmware.com
-[5]:	https://www.parallels.com
+[1]: https://www.reddit.com/r/homelab
+[2]: https://www.proxmox.com
+[3]: https://www.virtualbox.org
+[4]: https://www.vmware.com
+[5]: https://www.parallels.com
