@@ -67,15 +67,13 @@ export default ({ data }) => {
   return (
     <Layout>
       <h2>Portfolio</h2>
+      <span>
+        These are a lot of projects I have worked on that I feel comfortable
+        with sharing.
+      </span>
       <hr />
       <CardDeck>
-        {data.allMarkdownRemark.edges.map(({ node }) => {
-          if (node.frontmatter.parent === "portfolio") {
-            return displayProjects(node)
-          } else {
-            return null
-          }
-        })}
+        {data.allMarkdownRemark.edges.map(({ node }) => displayProjects(node))}
       </CardDeck>
     </Layout>
   )
@@ -83,22 +81,20 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      totalCount
+    allMarkdownRemark(
+      filter: { frontmatter: { parent: { eq: "portfolio" } } }
+    ) {
       edges {
         node {
-          id
           frontmatter {
+            parent
             title
             date(formatString: "MMMM DD, YYYY")
-            repo
-            site
-            parent
           }
+          excerpt
           fields {
             slug
           }
-          excerpt
         }
       }
     }

@@ -1,5 +1,5 @@
 import React from "react"
-import { Navbar, Nav, NavDropdown } from "react-bootstrap"
+import { Navbar, Nav } from "react-bootstrap"
 
 export default () => {
   var linkstyle = {
@@ -26,13 +26,9 @@ export default () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className="justify-content-end">
         <Nav>
-          <NavDropdown style={linkstyle} title="Other Stuff">
-            <NavDropdown.Item href="/otherStuff">Other Stuff</NavDropdown.Item>
-            <NavDropdown.Item href="/otherStuff/Fall2019CNYHackathon">
-              Fall 2019 CNY Hackathon
-            </NavDropdown.Item>
-          </NavDropdown>
-
+          <Nav.Link href="/blog" style={linkstyle}>
+            Blog
+          </Nav.Link>
           <Nav.Link href="/portfolio" style={linkstyle}>
             Portfolio
           </Nav.Link>
