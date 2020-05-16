@@ -1,12 +1,14 @@
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@3/distr/fira_code.css);
 html {
-  font-family: sans-serif;
+  font-family: "Fira Code";
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  background: #4c5052;
+  color: #eeeeee;
 }
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.night {
+  background: #4c5052;
+  color: #eeeeee;
 }
 article,
 aside,
@@ -39,6 +41,7 @@ template {
   display: none;
 }
 a {
+  color: #bbb;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
@@ -93,8 +96,9 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
+  font-family: "Fira Code";
   font-size: 1em;
+  color: #eeeeee;
 }
 figure {
   margin: 1em 40px;
@@ -402,11 +406,12 @@ pre {
   margin-bottom: 1.45rem;
   font-size: 0.85rem;
   line-height: 1.42;
-  background: hsla(0, 0%, 0%, 0.04);
+  /* background: hsla(0, 0%, 0%, 0.04); */
   border-radius: 3px;
   overflow: auto;
   word-wrap: normal;
   padding: 1.45rem;
+  color: #eeeeee;
 }
 table {
   margin-left: 0;
@@ -508,7 +513,7 @@ th {
   font-weight: bold;
 }
 li {
-  /* margin-bottom: calc(1.45rem / 2); */
+  margin-bottom: calc(1.45rem / 2);
 }
 ol li {
   padding-left: 0;
@@ -541,6 +546,7 @@ li > p {
 code {
   font-size: 0.85rem;
   line-height: 1.45rem;
+  color: #eeeeee;
 }
 kbd {
   font-size: 0.85rem;
@@ -596,10 +602,12 @@ code {
   padding: 0;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
+  color: #eeeeee;
 }
 pre code {
   background: none;
   line-height: 1.42;
+  color: #eeeeee;
 }
 code:before,
 code:after,

@@ -7,7 +7,7 @@ import Header from "./header"
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <div className="night" style={{ height: "100" }}>
       <Header />
       <div
         style={{
@@ -15,24 +15,38 @@ const Layout = ({ children }) => {
           maxWidth: 960,
           padding: `0px 1.0875rem 1.45rem`,
           paddingTop: 0,
+          position: "relative",
+          minHeight: "100%",
         }}
       >
         <link
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-          crossOrigin="anonymous"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+          crossorigin="anonymous"
         />
-        <main>{children}</main>
-        <footer>
+        <main style={{ paddingBottom: "2.5rem" }}>{children}</main>
+        <footer
+          style={{
+            position: "absolute",
+            bottom: 10,
+            width: "100%",
+            height: "2.5rem",
+            color: "#eeeeee",
+          }}
+        >
           © {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a style={{ color: "#eeeeee" }} href="https://www.gatsbyjs.org">
+            Gatsby
+          </a>
           <span> - </span>
-          <Link to="/">Go Home</Link>
+          <Link style={{ color: "#eeeeee" }} to="/">
+            Go Home
+          </Link>
         </footer>
       </div>
-    </>
+    </div>
   )
 }
 

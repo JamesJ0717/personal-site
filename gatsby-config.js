@@ -5,6 +5,7 @@ module.exports = {
     author: `@jameslovesalex`,
   },
   plugins: [
+    `gatsby-theme-blog`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -14,15 +15,41 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+        }`,
+        resolveSiteUrl: ({ site, allSitePage }) => {
+          //Alternativly, you may also pass in an environment variable (or any location) at the beginning of your `gatsby-config.js`.
+          return site.wp.generalSettings.siteUrl
+        },
+        serialize: ({ site, allSitePage }) =>
+          allSitePage.nodes.map(node => {
+            return {
+              url: `${site.wp.generalSettings.siteUrl}${node.path}`,
+              changefreq: `daily`,
+              priority: 0.7,
+            }
+          }),
+      },
+    },
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `James Johnson`,
+        short_name: `James Johnson`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#707375`,
+        theme_color: `#707375`,
         display: `minimal-ui`,
         icon: `src/images/melogo.png`, // This path is relative to the root of the site.
       },

@@ -31,7 +31,7 @@ jobs:
             - "9f:a1:11:79:24:ac:47:bd:6f:b1:90:32:4d:49:94:81"
       - run:
           name: Deploy to GH_Pages
-          command: gh-pages --dist public --message "[skip ci] deploy" --add
+          command: gh-pages -d public --message "[skip ci] deploy"
 
 workflows:
   version: 2

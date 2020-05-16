@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
+import "../components/layout.css"
 
 export default ({ data }) => {
   const post = data.markdownRemark
