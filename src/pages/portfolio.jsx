@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import { CardDeck, Card, Col, Button, Row } from "react-bootstrap"
 import { Link, graphql } from "gatsby"
+import "../components/layout.css"
 
 export default ({ data }) => {
   var displayProjects = node => {
@@ -11,6 +12,7 @@ export default ({ data }) => {
       if (node.frontmatter.site != null) {
         siteButton = (
           <Button
+            style={{ backgroundColor: "#333", borderWidth: 0 }}
             block
             href={"https://" + node.frontmatter.site + ".jamesjohnson.io"}
           >
@@ -24,6 +26,7 @@ export default ({ data }) => {
       if (node.frontmatter.repo != null) {
         repoButton = (
           <Button
+            style={{ backgroundColor: "#333", borderWidth: 0 }}
             block
             href={"https://www.github.com/JamesJ0717/" + node.frontmatter.repo}
           >
@@ -46,11 +49,19 @@ export default ({ data }) => {
     }
 
     return (
-      <Col key={node.frontmatter.title} sm={12} md={6} lg={6}>
-        <Card key={node.frontmatter.title}>
+      <Col
+        key={node.frontmatter.title}
+        sm={12}
+        md={6}
+        lg={6}
+        style={{ padding: 0 }}
+      >
+        <Card key={node.frontmatter.title} style={{ backgroundColor: "#777" }}>
           <Card.Header>
             <Card.Title>
-              <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+              <Link style={{ color: "#eeeeee" }} to={node.fields.slug}>
+                {node.frontmatter.title}
+              </Link>
               <p style={{ fontSize: "12pt" }}>{node.frontmatter.date}</p>
             </Card.Title>
           </Card.Header>
@@ -82,19 +93,22 @@ export default ({ data }) => {
 export const query = graphql`
   query {
     allMarkdownRemark(
+      sort: { fields: frontmatter___date, order: DESC }
       filter: { frontmatter: { parent: { eq: "portfolio" } } }
     ) {
       edges {
         node {
           frontmatter {
-            parent
-            title
             date(formatString: "MMMM DD, YYYY")
+            parent
+            repo
+            site
+            title
           }
-          excerpt
           fields {
             slug
           }
+          excerpt
         }
       }
     }

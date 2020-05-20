@@ -25,7 +25,7 @@ As a software developer, I've always heard "It's good to keep a portfolio...", s
 
 #### Other Stuff
 
-For other stuff I do on the side, not just coding projects, check out [Other Stuff][2].
+For other stuff I do on the side, not just coding projects, check out [Blog][2].
 
 [1]:	/portfolio "Portfolio"
-[2]:	/otherStuff
+[2]:	/blog

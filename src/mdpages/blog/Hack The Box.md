@@ -1,6 +1,5 @@
 ---
 title: Hack The Box
-date: May 14, 2020
+date: 2020-05-16
 parent: blog
 ---
-

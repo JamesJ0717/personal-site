@@ -2,11 +2,6 @@ import React from "react"
 import { Navbar, Nav } from "react-bootstrap"
 
 export default () => {
-  var linkstyle = {
-    textDecoration: "none",
-    color: "black",
-  }
-
   var barstyle = {
     margin: `0 auto`,
     marginBottom: "1.45rem",
@@ -14,28 +9,28 @@ export default () => {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: "#11CCCC",
+    backgroundColor: "#333",
   }
 
   return (
-    <Navbar expand="md" variant="light" style={barstyle}>
-      <Navbar.Brand style={{ fontSize: "20pt" }} href="/">
+    <Navbar expand="md" variant="dark" style={barstyle}>
+      <Navbar.Brand style={{ fontSize: "20pt", color: "#eeeeee" }} href="/">
         James Johnson
       </Navbar.Brand>
 
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className="justify-content-end">
         <Nav>
-          <Nav.Link href="/blog" style={linkstyle}>
+          <Nav.Link href="/blog" style={{ color: "#eeeeee" }}>
             Blog
           </Nav.Link>
-          <Nav.Link href="/portfolio" style={linkstyle}>
+          <Nav.Link href="/portfolio" style={{ color: "#eeeeee" }}>
             Portfolio
           </Nav.Link>
-          <Nav.Link href="/resume" style={linkstyle}>
+          <Nav.Link href="/resume" style={{ color: "#eeeeee" }}>
             Resume
           </Nav.Link>
-          <Nav.Link href="/contact" style={linkstyle}>
+          <Nav.Link href="/contact" style={{ color: "#eeeeee" }}>
             Contact
           </Nav.Link>
         </Nav>

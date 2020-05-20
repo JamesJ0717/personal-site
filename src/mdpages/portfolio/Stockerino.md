@@ -1,6 +1,6 @@
 ---
 title: Stockerino
-date: "2019-10-20"
+date: 2019-10-20
 repo: "CS490-Stockerino"
 site: 
 parent: portfolio
