@@ -13,12 +13,10 @@ export default ({ data }) => {
         lg={6}
         style={{ padding: 0 }}
       >
-        <Card key={node.frontmatter.title} style={{ backgroundColor: "#777" }}>
+        <Card key={node.frontmatter.title}>
           <Card.Header>
             <Card.Title>
-              <Link style={{ color: "#eeeeee" }} to={node.fields.slug}>
-                {node.frontmatter.title}
-              </Link>
+              <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
               <p style={{ fontSize: "12pt" }}>{node.frontmatter.date}</p>
             </Card.Title>
           </Card.Header>
