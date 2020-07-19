@@ -29,8 +29,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "b": "gatsby build",
-    "d": "gatsby develop",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
     "deploy": "cp -r public /var/www/html/",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
