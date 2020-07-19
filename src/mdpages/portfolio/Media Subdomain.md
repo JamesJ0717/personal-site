@@ -18,14 +18,16 @@ I have a docker-compose.yaml file for all of the different additions to Plex, as
 
 What's a reverse proxy? In layman's terms, a reverse proxy sends your request as though IT had made it. It's like a rudimentary VPN used for appearing in a different location. I'm my case I wanted my server to think all of the requests were coming from itself. Nginx is a web server with a built in proxy. This means it can serve web content and proxy requests at the same time. Without it I could not have done this as easily as I did.
 
-    ...
-    location /plex {
-        return https://plex.mydomain;
-    }
-    location /radarr {
-        proxy_pass http://Radarr:7878;
-    }
-    ...
+```
+...
+location /plex {
+    return https://plex.mydomain;
+}
+location /radarr {
+    proxy_pass http://Radarr:7878;
+}
+...
+```
 
 What this does is whenever a request comes to Nginx, if the url ends with /plex, it will return the string `https://...` But the reverse proxying happens with /radarr; here, the server passes on the request to the Radarr host, a locally running Docker container, and acts as though it made the request. To radarr, it thinks my server is hitting it with requests and will gladly accept and return its response.
 
