@@ -5,9 +5,10 @@ export default () => {
   return (
     <Layout>
       <embed
-        src="https://docs.google.com/gview?url=https://resume-psi.now.sh/JJ_Resume.pdf"
+        src="https://docs.google.com/gview?url=https://resume-psi.now.sh/JJ_Resume.pdf&embedded=true"
         type="application/pdf"
         title="Resume"
+        frameborder="0"
       />
       <p></p>
       <a
