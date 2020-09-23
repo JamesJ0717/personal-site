@@ -9,7 +9,8 @@ export default () => {
         type="application/pdf"
         title="Resume"
         frameborder="0"
-        style="width: 816px; height: 1056px;"
+        width="816"
+        height="1056"
       />
       <p></p>
       <a
