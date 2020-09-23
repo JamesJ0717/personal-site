@@ -7,6 +7,8 @@ export default () => {
       <embed
         src="https://resume-psi.now.sh/JJ_Resume.pdf#toolbar=0"
         title="Resume"
+        width="8.5in"
+        height="11in"
       />
       <p></p>
       <a
