@@ -9,7 +9,7 @@ export default () => {
         type="application/pdf"
         title="Resume"
         frameborder="0"
-        width="100%"
+        style={{ width: "100%" }}
       />
       <p></p>
       <a
