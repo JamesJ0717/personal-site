@@ -5,7 +5,7 @@ export default () => {
   return (
     <Layout>
       <embed
-        src="https://docs.google.com/gview?url=https://resume-psi.now.sh/JJ_Resume.pdf&embedded=true"
+        src="https://docs.google.com/gview?url=https://www.jamesjohnson.io/JJ_Resume.pdf&embedded=true"
         type="application/pdf"
         title="Resume"
         frameborder="0"
