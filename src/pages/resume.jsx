@@ -5,11 +5,11 @@ export default () => {
   return (
     <Layout>
       <embed
-        src="https://docs.google.com/gview?url=https://www.jamesjohnson.io/JJ_Resume.pdf&embedded=true"
+        src="https://www.jamesjohnson.io/JJ_Resume.pdf"
         type="application/pdf"
         title="Resume"
-        frameborder="0"
-        style={{ width: "100%" }}
+        frameBorder="0"
+        style={{ width: "100%", height: "960px" }}
       />
       <p></p>
       <a
