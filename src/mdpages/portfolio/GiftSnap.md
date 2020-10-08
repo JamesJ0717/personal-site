@@ -1,6 +1,6 @@
 ---
 title: Gift Snap
-date: 2020-05-19
+date: 2020-05-19 00:00:00 Z
 site: giftsnap
 repo: CS498-Capstone-GiftSnap
 parent: portfolio

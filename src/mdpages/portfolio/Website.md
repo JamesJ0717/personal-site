@@ -1,6 +1,6 @@
 ---
 title: Website
-date: 2019-10-28
+date: 2019-10-28 00:00:00 Z
 repo: personal-site
 site: www
 parent: portfolio

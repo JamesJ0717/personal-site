@@ -1,8 +1,8 @@
 ---
 title: OPCS
-date: 2018-10-20
-repo: "OPCS"
-site:
+date: 2018-10-20 00:00:00 Z
+repo: OPCS
+site: 
 parent: portfolio
 ---
 

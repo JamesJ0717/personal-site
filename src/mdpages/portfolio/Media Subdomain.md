@@ -1,8 +1,8 @@
 ---
 title: Media Subdomain
-date: 2019-01-20
-repo: "Media-Site"
-site:
+date: 2019-01-20 00:00:00 Z
+repo: Media-Site
+site: 
 parent: portfolio
 ---
 
