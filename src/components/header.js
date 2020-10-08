@@ -15,18 +15,12 @@ export default () => {
   return (
     <Navbar expand="md" variant="dark" style={barstyle}>
       <Navbar.Brand style={{ fontSize: "20pt", color: "#eeeeee" }} href="/">
-        James Johnson
+        JJ
       </Navbar.Brand>
 
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className="justify-content-end">
         <Nav>
-          <Nav.Link href="/blog" style={{ color: "#eeeeee" }}>
-            Blog
-          </Nav.Link>
-          <Nav.Link href="/portfolio" style={{ color: "#eeeeee" }}>
-            Portfolio
-          </Nav.Link>
           <Nav.Link href="/resume" style={{ color: "#eeeeee" }}>
             Resume
           </Nav.Link>

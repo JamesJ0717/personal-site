@@ -7,7 +7,21 @@ jobs:
   build:
     docker:
       - image: node
-
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+      - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: yarn build
+  deploy:
+    docker:
+      - image: node
     working_directory: ~/repo
     steps:
       - checkout
@@ -41,3 +55,9 @@ workflows:
           filters:
             branches:
               only: dev
+  buildDeploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: master

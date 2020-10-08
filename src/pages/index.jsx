@@ -4,33 +4,37 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "../components/layout.css"
 import { graphql } from "gatsby"
+import Portfolio from "../components/portfolio"
 
 export default ({ data }) => (
   <Layout>
     <SEO title="Home" />
     {data.allMarkdownRemark.edges.map(({ node }) => {
-      if (node.frontmatter.parent === "home") {
+      if (node.frontmatter.parent === "home")
         return <div dangerouslySetInnerHTML={{ __html: node.html }}></div>
-      } else {
-        return null
-      }
+      else return <div></div>
     })}
+    <Portfolio data={data} />
   </Layout>
 )
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      totalCount
+    allMarkdownRemark {
       edges {
         node {
-          id
-          html
           frontmatter {
-            title
             date(formatString: "MMMM DD, YYYY")
             parent
+            repo
+            site
+            title
           }
+          fields {
+            slug
+          }
+          excerpt
+          html
         }
       }
     }
