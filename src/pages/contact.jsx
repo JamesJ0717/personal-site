@@ -5,18 +5,17 @@ import Me from "../images/melogo.png"
 
 export default () => {
   return (
-    <Layout>
+    <div id="contact">
+      <h3>Contact</h3>
       <Row>
         <Col>
-          <Image src={Me} />
+          <Image src={Me} className="mh-100" />
         </Col>
         <Col className="col-10">
           <p>
-            If you would like to contact me, please send an email to{" "}
-            <a href="me@jamesjohnson.io">me@jamesjohnson.io</a>.
-          </p>
-          <p>
-            You can also reach out on Twitter. I am{" "}
+            If you would like to contact me, you could send an email to{" "}
+            <a href="me@jamesjohnson.io">me@jamesjohnson.io</a> or you can also
+            reach out on Twitter. I am{" "}
             <a href="https://twitter.com/jameslovesalex">@JamesLovesAlex</a>.
           </p>
           <p>
@@ -24,7 +23,7 @@ export default () => {
             GitHub, <a href="https://github.com/jamesj0717/">JamesJ0717</a>.
           </p>
           <p>
-            For any job oppurtunities or to checkout my LinkedIn, go to{" "}
+            My LinkedIn is at{" "}
             <a href="https://www.linkedin.com/in/jamesjjjohnson/">
               www.linkedin.com/in/jamesjjjohnson
             </a>
@@ -32,6 +31,6 @@ export default () => {
           </p>
         </Col>
       </Row>
-    </Layout>
+    </div>
   )
 }
