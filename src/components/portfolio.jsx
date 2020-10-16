@@ -4,7 +4,7 @@ import "../components/layout.css"
 
 export default ({ data }) => {
   return (
-    <div>
+    <div id="portfolio">
       <h3>Portfolio</h3>
       <p>Here are some of the cool things I've built.</p>
       {data.allMarkdownRemark.edges.map(({ node }) => {
