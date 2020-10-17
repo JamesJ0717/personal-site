@@ -10,7 +10,12 @@ export default ({ data }) => {
       <div>
         <h1>{post.frontmatter.title}</h1>
         <h4>{post.frontmatter.date}</h4>
-        <ul style={{ listStyle: "none", margin: 0 }}>
+        <ul
+          style={{
+            listStyle: "none",
+            margin: 0,
+          }}
+        >
           <li>
             <a
               href={
@@ -30,10 +35,16 @@ export default ({ data }) => {
             <> </>
           )}
         </ul>
-
-        <hr style={{ height: "1px" }}></hr>
-
-        <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
+        <hr
+          style={{
+            height: "1px",
+          }}
+        ></hr>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: post.html,
+          }}
+        ></div>
       </div>
     </Layout>
   )

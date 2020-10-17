@@ -1,5 +1,5 @@
 import React from "react"
-import { Navbar, Nav, Row, Col } from "react-bootstrap"
+import { Navbar, Nav } from "react-bootstrap"
 
 export default () => {
   var barstyle = {
@@ -28,13 +28,6 @@ export default () => {
         >
           JJ
         </Navbar.Brand>
-        <Nav.Link
-          className="justify-content-end"
-          href="/resume"
-          style={{ color: "#eeeeee" }}
-        >
-          Resume
-        </Nav.Link>
       </div>
     </Navbar>
   )
