@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
             width: "100%",
           }}
         >
-          © {new Date().getFullYear()}, Built with
+          © James Johnson {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
           <span> - </span>

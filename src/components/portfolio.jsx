@@ -5,16 +5,16 @@ import "../components/layout.css"
 export default ({ data }) => {
   return (
     <div id="portfolio">
-      <h3>Portfolio</h3>
+      <h4>Portfolio</h4>
       <p>Here are some of the cool things I've built.</p>
       {data.allMarkdownRemark.edges.map(({ node }) => {
         if (node.frontmatter.parent === "portfolio")
           return (
             <>
-              <h4>
+              <h5>
                 <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
-              </h4>
-              <h5>{node.frontmatter.date}</h5>
+              </h5>
+              <h6>{node.frontmatter.date}</h6>
               <p>{node.excerpt}</p>
             </>
           )

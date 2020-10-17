@@ -1,11 +1,11 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "../components/layout.css"
-import { graphql } from "gatsby"
 import Portfolio from "../components/portfolio"
-import Contact from "./contact"
+import Contact from "../components/contact"
 
 export default ({ data }) => (
   <Layout>
@@ -17,14 +17,16 @@ export default ({ data }) => (
         )
       else return <></>
     })}
+    <hr />
     <Portfolio data={data} />
+    <hr />
     <Contact />
   </Layout>
 )
 
 export const query = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
       edges {
         node {
           frontmatter {
