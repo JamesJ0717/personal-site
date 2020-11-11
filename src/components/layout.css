@@ -1,4 +1,5 @@
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@3/distr/fira_code.css);
+
 html {
   font-family: "Fira Code" !important;
   -ms-text-size-adjust: 100%;
@@ -7,7 +8,6 @@ html {
 }
 body {
   height: 100%;
-  background-color: #838383;
 }
 .footer {
   position: static;
