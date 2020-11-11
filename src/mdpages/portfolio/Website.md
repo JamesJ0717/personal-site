@@ -2,7 +2,7 @@
 title: Website
 date: 2019-10-28 00:00:00 Z
 repo: personal-site
-site: www
+site: https://www.jamesjohnson.io
 parent: portfolio
 ---
 
@@ -12,7 +12,7 @@ This is my personal site. Here. Everything you see here was written by me (excep
 
 ---
 
-##### A little bit about Vue and what I liked and disliked about it.
+#### A little bit about Vue and what I liked and disliked about it.
 
 Vue is pretty nice for general reactive components. I learned it while taking a class on Software Engineering. My team used it to build a frontend for our project so I felt I had a decent enough understanding and like*(?)* for it.
 
@@ -24,11 +24,11 @@ Anyway, Vue's components are structured differently than React's.
 
 ---
 
-##### Why I like Gatsby
+#### Why I like Gatsby
 
 Gatsby is awesome! I love using React since it's all JavaScript and the component based nature. Another great aspect of Gatsby is the plugin infrastructure. Plugins make Gatsby a lot more flexible than just having React components. My favorite plugin is a transformer plugin that coverts `Markdown` files into `HTML` to be displayed just like this page.
 
-###### Markdown
+#### Markdown
 
 If you haven't looked at Markdown and are a techie, you really should. A lot of people in the software development field use Markdown for writing `READMEs` for GitHub or just for their reference. Markdown is just a format for how you write text. Its not quite code, but its also more than just text.
 
