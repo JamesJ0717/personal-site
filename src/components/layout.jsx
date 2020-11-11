@@ -56,7 +56,7 @@ const Layout = ({ children }) => {
           className={`content text-"dark"`}
           style={{
             margin: `0 auto`,
-            width: 960,
+            maxWidth: 960,
             padding: `0px 1.0875rem 1.45rem`,
             paddingTop: 0,
             minHeight: "100vh",
