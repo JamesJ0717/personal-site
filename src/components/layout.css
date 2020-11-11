@@ -1,13 +1,13 @@
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@3/distr/fira_code.css);
+
 html {
-  font-family: "Fira Code";
+  font-family: "Fira Code" !important;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   height: 100%;
 }
 body {
   height: 100%;
-  background-color: #838383;
 }
 .footer {
   position: static;

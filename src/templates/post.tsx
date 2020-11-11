@@ -1,16 +1,32 @@
 import React from "react"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import "../components/layout.css"
 
 export default ({ data }) => {
-  const post = data.markdownRemark
+  const post: {
+    frontmatter: {
+      site: string
+      title: string
+      date: string
+      repo: string
+    }
+    html: string
+  } = data.markdownRemark
+
   return (
     <Layout>
+      <SEO title={post.frontmatter.title} />
       <div>
         <h1>{post.frontmatter.title}</h1>
         <h4>{post.frontmatter.date}</h4>
-        <ul style={{ listStyle: "none", margin: 0 }}>
+        <ul
+          style={{
+            listStyle: "none",
+            margin: 0,
+          }}
+        >
           <li>
             <a
               href={
@@ -22,18 +38,22 @@ export default ({ data }) => {
           </li>
           {post.frontmatter.site !== null ? (
             <li>
-              <a href={"https://" + post.frontmatter.site + ".jamesjohnson.io"}>
-                https://{post.frontmatter.site}.jamesjohnson.io
-              </a>
+              <a href={post.frontmatter.site}>{post.frontmatter.site}</a>
             </li>
           ) : (
             <> </>
           )}
         </ul>
-
-        <hr style={{ height: "1px" }}></hr>
-
-        <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
+        <hr
+          style={{
+            height: "1px",
+          }}
+        ></hr>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: post.html,
+          }}
+        ></div>
       </div>
     </Layout>
   )

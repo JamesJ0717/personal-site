@@ -1,26 +1,29 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "../components/layout.css"
-import { graphql } from "gatsby"
 import Portfolio from "../components/portfolio"
+import Contact from "../components/contact"
+import Welcome from "../components/welcome"
 
-export default ({ data }) => (
-  <Layout>
-    <SEO title="Home" />
-    {data.allMarkdownRemark.edges.map(({ node }) => {
-      if (node.frontmatter.parent === "home")
-        return <div dangerouslySetInnerHTML={{ __html: node.html }}></div>
-      else return <div></div>
-    })}
-    <Portfolio data={data} />
-  </Layout>
-)
+export default ({ data }) => {
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <Welcome />
+      <hr />
+      <Portfolio data={data} />
+      <hr />
+      <Contact />
+    </Layout>
+  )
+}
 
 export const query = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
       edges {
         node {
           frontmatter {

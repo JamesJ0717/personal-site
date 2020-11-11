@@ -24,7 +24,7 @@ module.exports = {
         background_color: `#838383`,
         theme_color: `#838383`,
         display: `minimal-ui`,
-        icon: `src/images/melogo.png`, // This path is relative to the root of the site.
+        icon: `static/melogo.png`, // This path is relative to the root of the site.
       },
     },
     {
