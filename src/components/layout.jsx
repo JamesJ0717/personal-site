@@ -1,49 +1,52 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
-import { Nav, Navbar, Button } from "react-bootstrap"
+import { Nav, Navbar, Container } from "react-bootstrap"
 
 import "./layout.css"
 
 const Header = () => {
   return (
-    <Navbar
-      style={{
-        margin: `0 auto`,
-      }}
-      className={`h-auto pb-4 bg-light`}
-    >
-      <div
-        className={`d-flex justify-content-between align-middle`}
-        style={{
-          width: 960,
-          paddingLeft: "1.0875rem",
-          paddingRight: "1.0875rem",
-          paddingBottom: 0,
-          marginLeft: "auto",
-          marginRight: "auto",
-        }}
-      >
+    <Navbar variant="dark" className="bg-secondary">
+      <Container className="justify-content-between">
         <Navbar.Brand className="justify-content-start">
-          <Link to="/" className={`h2 text-dark`}>
+          <Link to="/" className={`h2 text-body`}>
             JJ
           </Link>
         </Navbar.Brand>
         <Nav className="justify-content-between align-middle">
-          <Link className={`text-dark p-2`} to="/#portfolio">
+          <Link className={`h5 text-body p-2`} to="/#portfolio">
             Portfolio
           </Link>
-          <Link className={`text-dark p-2`} to="/#contact">
+          <Link className={`h5 text-body p-2`} to="/#contact">
             Contact
           </Link>
         </Nav>
-      </div>
+      </Container>
     </Navbar>
+  )
+}
+
+const Footer = () => {
+  return (
+    <Container className="py-4">
+      <footer className="footer">
+        © James Johnson {new Date().getFullYear()}, Built with
+        {` `}
+        <a className="text-body" href="https://www.gatsbyjs.org">
+          Gatsby
+        </a>
+        <span> - </span>
+        <Link to="/" className="text-body">
+          Go Home
+        </Link>
+      </footer>
+    </Container>
   )
 }
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <div className="bg-light">
       <link
         rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -51,33 +54,11 @@ const Layout = ({ children }) => {
         crossorigin="anonymous"
       />
       <Header />
-      <div className={`bg-light`}>
-        <div
-          className={`content text-"dark"`}
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-            minHeight: "100vh",
-          }}
-        >
-          <main style={{ paddingBottom: "2.5rem" }}>{children}</main>
-          <footer
-            className="footer"
-            style={{
-              width: "100%",
-            }}
-          >
-            © James Johnson {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-            <span> - </span>
-            <Link to="/">Go Home</Link>
-          </footer>
-        </div>
-      </div>
-    </>
+      <Container className="content text-body">
+        <main className="py-4">{children}</main>
+      </Container>
+      <Footer />
+    </div>
   )
 }
 

@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `James Johnson`,
     description: `My Personal Site for showing off what I am working on.`,
-    author: `@jameslovesalex`,
+    author: `@jamesjohnsondev`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -24,7 +24,7 @@ module.exports = {
         background_color: `#838383`,
         theme_color: `#838383`,
         display: `minimal-ui`,
-        icon: `static/melogo.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     {
