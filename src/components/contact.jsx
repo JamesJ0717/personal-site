@@ -1,6 +1,8 @@
 import React from "react"
-import { Image, Row, Col } from "react-bootstrap"
-import Me from "../images/melogo.png"
+import { Row, Col } from "react-bootstrap"
+import small from "../images/Melogo128x128.png"
+import medium from "../images/Melogo256x256.png"
+import large from "../images/Melogo512x512.png"
 
 export default () => {
   let links = [
@@ -36,7 +38,12 @@ export default () => {
         <h4>Contact</h4>
         <Row>
           <Col className="col-2">
-            <Image src={Me} alt="Picture of me" className="w-auto" />
+            <img
+              src={small}
+              srcSet={`${small} 320w, ${medium} 768w, ${large} 1280w`}
+              sizes={"100%"}
+              alt="Me"
+            />
           </Col>
           <Col className="">
             <ul style={{ listStyle: "none" }} className="text-left">
