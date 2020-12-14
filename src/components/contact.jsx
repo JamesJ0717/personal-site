@@ -10,9 +10,9 @@ export default () => {
       display: "me@jamesjohnson.io",
     },
     {
-      url: "https://www.twitter.com/jamesjohnsondev",
+      url: "https://www.twitter.com/jamesj_dev",
       label: "Twitter",
-      display: "@jamesjohnsondev",
+      display: "@jamesj_dev",
     },
     {
       url: "https://www.github.com/jamesj0717",
@@ -25,7 +25,7 @@ export default () => {
       display: "linkedin.com/in/jamesjjjohnson",
     },
     {
-      url: "https://www.jamesjohnson.io/JJ_Resume.pdf",
+      url: "/JJ_Resume.pdf",
       label: "Resume",
       display: "jamesjohnson.io/JJ_Resume.pdf",
     },
@@ -36,7 +36,7 @@ export default () => {
         <h4>Contact</h4>
         <Row>
           <Col className="col-2">
-            <Image src={Me} alt="Picture of me" className="w-100" />
+            <Image src={Me} alt="Picture of me" className="w-auto" />
           </Col>
           <Col className="">
             <ul style={{ listStyle: "none" }} className="text-left">

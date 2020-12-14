@@ -2,7 +2,7 @@
   "name": "jj-personal-site",
   "private": true,
   "description": "My Personal Site",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "James Johnson <me@jamesjohnson.io>",
   "dependencies": {
     "@emotion/core": "^10.0.21",
