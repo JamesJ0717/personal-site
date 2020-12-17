@@ -1,8 +1,6 @@
 import React from "react"
 import { Row, Col } from "react-bootstrap"
-import small from "../images/Melogo128x128.png"
-import medium from "../images/Melogo256x256.png"
-import large from "../images/Melogo512x512.png"
+import Image from "./image"
 
 export default () => {
   let links = [
@@ -29,23 +27,18 @@ export default () => {
     {
       url: "/JJ_Resume.pdf",
       label: "Resume",
-      display: "jamesjohnson.io/JJ_Resume.pdf",
+      display: "JJ_Resume.pdf",
     },
   ]
   return (
     <>
       <div id="contact">
         <h4>Contact</h4>
-        <Row>
-          <Col className="col-2">
-            <img
-              src={small}
-              srcSet={`${small} 320w, ${medium} 768w, ${large} 1280w`}
-              sizes={"100%"}
-              alt="Me"
-            />
+        <Row className="">
+          <Col sm={6} md={4} lg={2}>
+            <Image></Image>
           </Col>
-          <Col className="">
+          <Col sm={6} md={8} lg={10} className="">
             <ul style={{ listStyle: "none" }} className="text-left">
               {links.map((link) => (
                 <li>

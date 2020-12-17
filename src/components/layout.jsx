@@ -6,35 +6,33 @@ import "./layout.css"
 
 const Header = () => {
   return (
-    <Navbar variant="dark" className="bg-secondary">
-      <Container className="justify-content-between">
-        <Navbar.Brand className="justify-content-start">
-          <Link to="/" className={`h2 text-body`}>
-            JJ
-          </Link>
-        </Navbar.Brand>
-        <Nav className="justify-content-between align-middle">
-          <Link className={`h5 text-body p-2`} to="/#portfolio">
-            Portfolio
-          </Link>
-          <Link className={`h5 text-body p-2`} to="/#contact">
-            Contact
-          </Link>
-        </Nav>
+    <div id="header" className="bg-secondary">
+      <Container>
+        <Navbar variant="dark" className="px-0 justify-content-between">
+          <Navbar.Brand className="justify-content-start">
+            <Link to="/" className={`h2 text-body`}>
+              JJ
+            </Link>
+          </Navbar.Brand>
+          <Nav className="justify-content-between align-middle">
+            <Link className={`h5 text-body p-2`} to="/#portfolio">
+              Portfolio
+            </Link>
+            <Link className={`h5 text-body p-2`} to="/#contact">
+              Contact
+            </Link>
+          </Nav>
+        </Navbar>
       </Container>
-    </Navbar>
+    </div>
   )
 }
 
 const Footer = () => {
   return (
-    <Container className="py-4">
+    <Container id="footer" className="py-4">
       <footer className="footer">
-        © James Johnson {new Date().getFullYear()}, Built with
-        {` `}
-        <a className="text-body" href="https://www.gatsbyjs.org">
-          Gatsby
-        </a>
+        © James Johnson {new Date().getFullYear()}
         <span> - </span>
         <Link to="/" className="text-body">
           Go Home
@@ -54,7 +52,7 @@ const Layout = ({ children }) => {
         crossorigin="anonymous"
       />
       <Header />
-      <Container className="content text-body">
+      <Container id="body" className="">
         <main className="py-4">{children}</main>
       </Container>
       <Footer />
