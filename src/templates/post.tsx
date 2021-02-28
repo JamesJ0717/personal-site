@@ -5,12 +5,13 @@ import { graphql } from "gatsby"
 import "../components/layout.css"
 
 export default ({ data }) => {
+  console.log(data)
   const post: {
     frontmatter: {
-      site: string
+      repo: string
       title: string
       date: string
-      repo: string
+      site: string
     }
     html: string
   } = data.markdownRemark
@@ -29,13 +30,7 @@ export default ({ data }) => {
           }}
         >
           <li>
-            <a
-              href={
-                "https://www.github.com/JamesJ0717/" + post.frontmatter.repo
-              }
-            >
-              https://www.github.com/JamesJ0717/{post.frontmatter.repo}
-            </a>
+            <a href={post.frontmatter.repo}>{post.frontmatter.repo}</a>
           </li>
           {post.frontmatter.site !== null ? (
             <li>
@@ -63,13 +58,13 @@ export default ({ data }) => {
 export const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        repo
-        site
         title
+        site
+        repo
+        date(formatString: "MMMM DD, YYYY")
       }
+      html
     }
   }
 `

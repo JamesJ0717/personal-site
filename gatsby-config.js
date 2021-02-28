@@ -4,6 +4,10 @@ module.exports = {
     description: `My Personal Site for showing off what I am working on.`,
     author: `@jamesjohnsondev`,
   },
+  proxy: {
+    prefix: "/admin",
+    url: "http://localhost:3000",
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
@@ -25,18 +29,6 @@ module.exports = {
         theme_color: `#838383`,
         display: `minimal-ui`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
-      },
-    },
-    {
-      resolve: `gatsby-source-graphql`,
-      options: {
-        typeName: "keystone",
-        fieldName: "keystone",
-        createLink: (pluginOptions) => {
-          return createHttpLink({
-            uri: "/admin/api",
-          })
-        },
       },
     },
     {
