@@ -28,6 +28,18 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-graphql`,
+      options: {
+        typeName: "keystone",
+        fieldName: "keystone",
+        createLink: (pluginOptions) => {
+          return createHttpLink({
+            uri: "/admin/api",
+          })
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `mdpages`,

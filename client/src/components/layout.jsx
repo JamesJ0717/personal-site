@@ -52,7 +52,7 @@ const Layout = ({ children }) => {
         crossorigin="anonymous"
       />
       <Header />
-      <Container id="body" className="">
+      <Container id="body" className="d-flex justify-content-center">
         <main className="py-4">{children}</main>
       </Container>
       <Footer />

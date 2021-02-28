@@ -7,24 +7,32 @@ import "../components/layout.css"
 import Contact from "../components/contact"
 import Welcome from "../components/welcome"
 
+const Card = ({ node }) => {
+  return (
+    <div className="card col-5 m-2">
+      <div className="card-body">
+        <h5 className="card-title">
+          <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+        </h5>
+        <h6 className="card-subtitle">{node.frontmatter.date}</h6>
+        <p className="card-text">{node.excerpt}</p>
+      </div>
+    </div>
+  )
+}
+
 const Portfolio = ({ data }) => {
   return (
     <div id="portfolio">
       <h4>Portfolio</h4>
       <p>Here are some of the cool things I've built.</p>
-      {data.allMarkdownRemark.edges.map(({ node }) => {
-        if (node.frontmatter.parent === "portfolio")
-          return (
-            <>
-              <h5>
-                <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
-              </h5>
-              <h6>{node.frontmatter.date}</h6>
-              <p>{node.excerpt}</p>
-            </>
-          )
-        else return <div></div>
-      })}
+      <div className="d-flex flex-wrap justify-content-around">
+        {data.allMarkdownRemark.edges.map(({ node }) => {
+          if (node.frontmatter.parent === "portfolio")
+            return <Card node={node} />
+          else return <div></div>
+        })}
+      </div>
     </div>
   )
 }
@@ -37,6 +45,7 @@ export default ({ data }) => {
       <hr />
       <Portfolio data={data} />
       <hr />
+
       <Contact />
     </Layout>
   )

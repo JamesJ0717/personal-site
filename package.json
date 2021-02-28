@@ -1,47 +1,28 @@
 {
-  "name": "jj-personal-site",
+  "name": "@keystonejs/example-projects-starter",
+  "description": "An example KeystoneJS project with a User list and Authentication.",
   "private": true,
-  "description": "My Personal Site",
-  "version": "0.1.1",
-  "author": "James Johnson <me@jamesjohnson.io>",
-  "dependencies": {
-    "@emotion/core": "^10.0.21",
-    "cors": "^2.8.5",
-    "fs": "^0.0.1-security",
-    "gatsby": "^2.16.1",
-    "gatsby-cli": "^2.12.103",
-    "gatsby-image": "^2.8.0",
-    "gatsby-plugin-manifest": "^2.4.17",
-    "gatsby-plugin-react-helmet": "^3.1.13",
-    "gatsby-plugin-sharp": "^2.2.31",
-    "gatsby-source-contentful": "^2.3.50",
-    "gatsby-source-filesystem": "^2.1.33",
-    "gatsby-transformer-remark": "^2.6.30",
-    "gatsby-transformer-sharp": "^2.2.23",
-    "react": "^16.10.2",
-    "react-bootstrap": "^1.0.0-beta.14",
-    "react-dom": "^16.10.2",
-    "react-helmet": "^5.2.1",
-    "react-pdf": "^4.1.0"
-  },
-  "keywords": [
-    "gatsby"
-  ],
+  "version": "6.0.0",
+  "author": "The KeystoneJS Development Team",
+  "repository": "https://github.com/keystonejs/keystone/tree/master/packages/create-keystone-app/example-projects/starter",
+  "homepage": "https://github.com/keystonejs/keystone",
   "license": "MIT",
+  "engines": {
+    "node": ">=10.0.0"
+  },
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "deploy": "cp -r public /var/www/html/",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "yarn b; gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+    "dev": "cross-env NODE_ENV=development DISABLE_LOGGING=true keystone dev",
+    "build": "cross-env NODE_ENV=production keystone build",
+    "start": "cross-env NODE_ENV=production keystone start",
+    "create-tables": "cross-env CREATE_TABLES=true keystone create-tables"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  "dependencies": {
+    "@keystonejs/adapter-mongoose": "^11.0.1",
+    "@keystonejs/app-admin-ui": "^7.4.0",
+    "@keystonejs/app-graphql": "^6.2.0",
+    "@keystonejs/auth-password": "^6.0.1",
+    "@keystonejs/fields": "^22.0.0",
+    "@keystonejs/keystone": "^19.2.0",
+    "cross-env": "^7.0.3"
   }
 }
