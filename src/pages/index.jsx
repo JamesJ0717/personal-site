@@ -4,7 +4,6 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "../components/layout.css"
-import Contact from "../components/contact"
 import Welcome from "../components/welcome"
 
 const Card = ({ node }) => {
@@ -48,7 +47,6 @@ export default ({ data }) => {
       <hr />
       <Portfolio data={data} />
       <hr />
-      {/* <Contact /> */}
     </Layout>
   )
 }
