@@ -2,15 +2,15 @@ import React from "react"
 
 const Welcome = () => {
   return (
-    <div>
-      <h4>Hi Everybody</h4>
-      <p>
+    <div className="space-y-1">
+      <div className="text-2xl font-semibold">Hi Everybody</div>
+      <div className="text-base">
         Welcome to my website. This is going to be like a blog site, but also
         like a portfolio, but also including <i>posts</i> about things I do or
         am working on that are fun.
-      </p>
-      <h5>Me</h5>
-      <p>
+      </div>
+      <div className="text-xl font-semibold">Me</div>
+      <div className="text-base">
         A little bit about me... I am a computer guy. I don't know how I would
         describe myself quickly and in a few words. I like working with
         computers; whether it be software engineering, sysadmining, security
@@ -20,10 +20,10 @@ const Welcome = () => {
         still don't really know what I want to do. All I know is, I want to work
         with computers in some way,{" "}
         <i>one of the aforementioned ways would be ideal</i>.
-      </p>
+      </div>
 
-      <h5>Purpose</h5>
-      <p>
+      <div className="text-xl font-semibold">Purpose</div>
+      <div className="text-base">
         As I said, this is going to be used like a portfolio. However, I am
         using Gatsby, which is used in a lot of blogs. I{" "}
         <i>
@@ -34,7 +34,7 @@ const Welcome = () => {
         built off of React, so I get all of the benefits of reactive components
         and responsiveness from React, while now being able to write all of my
         pages in Markdown and have them displayed nicely as HTML.
-      </p>
+      </div>
     </div>
   )
 }

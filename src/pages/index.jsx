@@ -9,24 +9,27 @@ import Welcome from "../components/welcome"
 
 const Card = ({ node }) => {
   return (
-    <div className="card col-5 m-2">
-      <div className="card-body">
-        <h5 className="card-title">
-          <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
-        </h5>
-        <h6 className="card-subtitle">{node.frontmatter.date}</h6>
-        <p className="card-text">{node.excerpt}</p>
+    <Link
+      to={node.fields.slug}
+      className="bg-gray-100 shadow-xl border rounded-lg divide-y divide-gray-200 p-4 hover:bg-gray-300 text-black hover:text-black"
+    >
+      <div className="text-xl">
+        <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+        <div className="text-base">{node.frontmatter.date}</div>
       </div>
-    </div>
+      <div className="text-base">{node.excerpt}</div>
+    </Link>
   )
 }
 
 const Portfolio = ({ data }) => {
   return (
     <div id="portfolio">
-      <h4>Portfolio</h4>
-      <p>Here are some of the cool things I've built.</p>
-      <div className="d-flex flex-wrap justify-content-around">
+      <div className="text-xl">Portfolio</div>
+      <div className="text-base">
+        Here are some of the cool things I've built.
+      </div>
+      <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-4 my-2">
         {data.allMarkdownRemark.edges.map(({ node }) => {
           if (node.frontmatter.parent === "portfolio")
             return <Card node={node} />
@@ -45,8 +48,7 @@ export default ({ data }) => {
       <hr />
       <Portfolio data={data} />
       <hr />
-
-      <Contact />
+      {/* <Contact /> */}
     </Layout>
   )
 }

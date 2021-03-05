@@ -19,18 +19,19 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />
-      <div>
+      <div className="h-screen">
         <h1>{post.frontmatter.title}</h1>
         <h4>{post.frontmatter.date}</h4>
         <ul
-          className="p-0"
+          className="p-0 space-y-2"
           style={{
             listStyle: "none",
-            margin: `0 auto`,
           }}
         >
           <li>
-            <a href={post.frontmatter.repo}>{post.frontmatter.repo}</a>
+            <a href={"https://github.com/jamesj0717/" + post.frontmatter.repo}>
+              {"https://github.com/jamesj0717/" + post.frontmatter.repo}
+            </a>
           </li>
           {post.frontmatter.site !== null ? (
             <li>

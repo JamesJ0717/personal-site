@@ -1,5 +1,4 @@
 import React from "react"
-import { Row, Col } from "react-bootstrap"
 import Image from "./image"
 
 export default () => {
@@ -30,25 +29,24 @@ export default () => {
       display: "JJ_Resume.pdf",
     },
   ]
+
   return (
-    <>
-      <div id="contact">
-        <h4>Contact</h4>
-        <Row className="">
-          <Col sm={6} md={4} lg={2}>
-            <Image></Image>
-          </Col>
-          <Col sm={6} md={8} lg={10} className="">
-            <ul style={{ listStyle: "none" }} className="text-left">
-              {links.map((link) => (
-                <li>
-                  {link.label}: <a href={link.url}>{link.display}</a>
-                </li>
-              ))}
-            </ul>
-          </Col>
-        </Row>
+    <div id="contact">
+      <div className="text-xl">Contact</div>
+      <div className="px-4 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-12">
+        <div className="lg:col-span-3">
+          <Image></Image>
+        </div>
+        <div className="lg:col-span-9">
+          <ul style={{ listStyle: "none" }} className="text-left space-y-2">
+            {links.map((link) => (
+              <li>
+                {link.label}: <a href={link.url}>{link.display}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </>
+    </div>
   )
 }
