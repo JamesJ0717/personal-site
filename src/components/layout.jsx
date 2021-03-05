@@ -1,6 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import "../styles/global.css"
+import "./layout.css"
+
 const Header = () => {
   return (
     <div id="header" className="py-2" style={{ backgroundColor: "#6c757d" }}>
@@ -94,13 +97,24 @@ const Footer = () => {
 
 const Layout = ({ children }) => {
   return (
-    <div className="" style={{ backgroundColor: "#f8f9fa" }}>
-      <Header />
-      <div id="body" className="container flex justify-center my-4">
-        <main className="py-4">{children}</main>
+    <>
+      <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css"
+      />
+
+      <div className="" style={{ backgroundColor: "#f8f9fa" }}>
+        <Header />
+        <div id="body" className="container flex justify-center my-4">
+          <main className="py-4">{children}</main>
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </>
   )
 }
 

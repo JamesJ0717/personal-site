@@ -1,6 +1,3 @@
-@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@3/distr/fira_code.css);
-@import url(https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css);
-
 html {
   font-family: "Fira Code" !important;
   -ms-text-size-adjust: 100%;
@@ -15,5 +12,5 @@ body {
   bottom: 0;
 }
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }

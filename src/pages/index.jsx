@@ -39,7 +39,7 @@ const Portfolio = ({ data }) => {
   )
 }
 
-export default ({ data }) => {
+const index = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
@@ -50,6 +50,8 @@ export default ({ data }) => {
     </Layout>
   )
 }
+
+export default index
 
 export const query = graphql`
   query {

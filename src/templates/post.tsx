@@ -5,7 +5,6 @@ import { graphql } from "gatsby"
 import "../components/layout.css"
 
 export default ({ data }) => {
-  console.log(data)
   const post: {
     frontmatter: {
       repo: string
