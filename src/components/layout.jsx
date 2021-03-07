@@ -1,9 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import "../styles/global.css"
-import "./layout.css"
-
 const Header = () => {
   return (
     <div id="header" className="py-2" style={{ backgroundColor: "#6c757d" }}>
@@ -23,12 +20,12 @@ const Header = () => {
 const Footer = () => {
   return (
     <div style={{ backgroundColor: "#f8f9fa" }}>
-      <footer class="container">
-        <div class="py-12 flex items-center justify-between">
-          <div class="flex justify-center space-x-6 md:order-2">
-            <Link
-              to="https://github.com/JamesJ0717"
-              class="text-gray-400 hover:text-gray-500"
+      <footer className="container">
+        <div className="py-12 flex items-center justify-between">
+          <div className="flex justify-center space-x-6 md:order-2">
+            <a
+              href="https://github.com/JamesJ0717"
+              className="text-gray-400 hover:text-gray-500"
             >
               <span className="sr-only">GitHub</span>
               <svg
@@ -43,11 +40,11 @@ const Footer = () => {
                   clip-rule="evenodd"
                 />
               </svg>
-            </Link>
+            </a>
 
-            <Link
-              to="https://twitter.com/jamesj_dev"
-              class="text-gray-400 hover:text-gray-500"
+            <a
+              href="https://twitter.com/jamesj_dev"
+              className="text-gray-400 hover:text-gray-500"
             >
               <span className="sr-only">Twitter</span>
               <svg
@@ -58,7 +55,7 @@ const Footer = () => {
               >
                 <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
               </svg>
-            </Link>
+            </a>
 
             <a
               href="mailto:james@jamesjohnson.io"
@@ -81,8 +78,8 @@ const Footer = () => {
               </svg>
             </a>
           </div>
-          <div class="mt-8 md:mt-0 md:order-1">
-            <p class="text-center text-base text-gray-400">
+          <div className="mt-8 md:mt-0 md:order-1">
+            <p className="text-center text-base text-gray-400">
               &copy; {new Date().getFullYear()} James Johnson, All rights
               reserved.
               <Link to="/" className="text-gray-400 hover:text-gray-500">
@@ -100,16 +97,23 @@ const Footer = () => {
 const Layout = ({ children }) => {
   return (
     <>
-      <link
+      {/* <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
         rel="stylesheet"
       />
       <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css"
+      /> */}
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css"
       />
 
-      <div className="flex flex-col" style={{ backgroundColor: "#f8f9fa" }}>
+      <div
+        className="flex flex-col min-h-screen"
+        style={{ backgroundColor: "#f8f9fa" }}
+      >
         <Header />
         <div
           id="body"

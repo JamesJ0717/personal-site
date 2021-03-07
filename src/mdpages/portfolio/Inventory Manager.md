@@ -1,7 +1,7 @@
 ---
 title: Inventory Manager
 date: 2020-09-26 00:00:00 Z
-parent: portfolio
+parent: draft
 repo: inventory-management
 site:
 ---

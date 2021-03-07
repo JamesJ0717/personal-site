@@ -2,7 +2,6 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
-import "../components/layout.css"
 
 export default ({ data }) => {
   const post: {
@@ -18,39 +17,30 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title={post.frontmatter.title} />
-      <div className="h-screen">
+      <article className="min-h-full min-w-full prose">
         <h1>{post.frontmatter.title}</h1>
         <h4>{post.frontmatter.date}</h4>
-        <ul
-          className="p-0 space-y-2"
-          style={{
-            listStyle: "none",
-          }}
-        >
-          <li>
+        <ul className="p-0 space-y-2 list-none">
+          <li className="list-none">
             <a href={"https://github.com/jamesj0717/" + post.frontmatter.repo}>
               {"https://github.com/jamesj0717/" + post.frontmatter.repo}
             </a>
           </li>
           {post.frontmatter.site !== null ? (
-            <li>
+            <li className="list-none">
               <a href={post.frontmatter.site}>{post.frontmatter.site}</a>
             </li>
           ) : (
             <> </>
           )}
         </ul>
-        <hr
-          style={{
-            height: "1px",
-          }}
-        ></hr>
+        <hr />
         <div
           dangerouslySetInnerHTML={{
             __html: post.html,
           }}
         ></div>
-      </div>
+      </article>
     </Layout>
   )
 }

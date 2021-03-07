@@ -7,10 +7,14 @@ module.exports = {
         center: true,
         padding: "2rem",
       },
+      prose: {
+        listStyle: "none",
+        before: "none",
+      },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 }
