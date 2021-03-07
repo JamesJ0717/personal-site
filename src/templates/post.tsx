@@ -12,11 +12,12 @@ export default ({ data }) => {
       site: string
     }
     html: string
+    excerpt: string
   } = data.markdownRemark
 
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} />
+      <SEO title={post.frontmatter.title} description={post.excerpt} />
       <article className="min-h-full min-w-full prose">
         <h1>{post.frontmatter.title}</h1>
         <h4>{post.frontmatter.date}</h4>
@@ -55,6 +56,7 @@ export const query = graphql`
         date(formatString: "MMMM DD, YYYY")
       }
       html
+      excerpt
     }
   }
 `

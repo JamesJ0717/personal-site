@@ -77,7 +77,11 @@ const Welcome = () => {
 const index = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO
+        title="Home"
+        description="Welcome to my website. This is going to be like a blog site, but also like a portfolio...
+"
+      />
       <div className="grid grid-cols-1 space-y-8">
         <div>
           <Welcome />
