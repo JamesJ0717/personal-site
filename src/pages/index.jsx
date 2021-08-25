@@ -7,14 +7,14 @@ const Portfolio = ({ data }) => {
   const Card = ({ node }) => {
     return (
       <Link
-        to={node.fields.slug}
+        to={node.title}
         className="bg-gray-100 shadow-xl border rounded-lg divide-y divide-gray-200 p-4 hover:bg-gray-300 text-black hover:text-black"
       >
         <div className="text-xl">
-          <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
-          <div className="text-base">{node.frontmatter.date}</div>
+          <Link to={node.title}>{node.title}</Link>
+          <div className="text-base">{node.properties.Created.value}</div>
         </div>
-        <div className="text-base">{node.excerpt}</div>
+        <div className="text-base">{node.childMarkdownRemark.excerpt}</div>
       </Link>
     )
   }
@@ -25,11 +25,9 @@ const Portfolio = ({ data }) => {
         Here are some of the cool things I've built.
       </div>
       <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-4 my-2">
-        {data.allMarkdownRemark.edges.map(({ node }) => {
-          if (node.frontmatter.parent === "portfolio")
-            return <Card node={node} />
-          else return <div></div>
-        })}
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <Card node={node} />
+        ))}
       </div>
     </div>
   )
@@ -79,8 +77,7 @@ const index = ({ data }) => {
     <Layout>
       <SEO
         title="Home"
-        description="Welcome to my website. This is going to be like a blog site, but also like a portfolio...
-"
+        description="Welcome to my website. This is going to be like a blog site, but also like a portfolio..."
       />
       <div className="grid grid-cols-1 space-y-8">
         <div>
@@ -99,22 +96,18 @@ export default index
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
-      sort: { fields: frontmatter___date, order: DESC }
-      filter: { frontmatter: { parent: { nin: "draft" } } }
+    allNotion(
+      filter: { properties: { Status: { value: { name: { eq: "Done" } } } } }
+      sort: { fields: properties___Created___value, order: DESC }
     ) {
-      edges {
-        node {
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            parent
-            repo
-            site
-            title
+      nodes {
+        title
+        properties {
+          Created {
+            value(formatString: "MMMM DD, YYYY")
           }
-          fields {
-            slug
-          }
+        }
+        childMarkdownRemark {
           excerpt
           html
         }

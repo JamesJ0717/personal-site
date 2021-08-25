@@ -1,0 +1,97 @@
+{
+  "main": {
+    "id": "ae13866428e46611",
+    "type": "split",
+    "children": [
+      {
+        "id": "5d0d76bf2f7edd92",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "src/mdpages/portfolio/Website.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "329f9d0666e074fe",
+    "type": "split",
+    "children": [
+      {
+        "id": "b12c00c4d0cc6cb2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2179b246f6390e06",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "dbfa0818d7cf0ae0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8520a61b8766f01a",
+    "type": "split",
+    "children": [
+      {
+        "id": "b48a934a7972972f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0ccce6bd319ed515",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "src/mdpages/portfolio/Website.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "lastOpenFiles": [
+    "src/mdpages/portfolio/Website.md",
+    "src/mdpages/portfolio/Stockerino.md",
+    "src/mdpages/portfolio/Sorting Algos.md",
+    "src/mdpages/portfolio/OPCS.md",
+    "src/mdpages/portfolio/Media Subdomain.md",
+    "src/mdpages/portfolio/Inventory Manager.md",
+    "src/mdpages/portfolio/GiftSnap.md"
+  ]
+}

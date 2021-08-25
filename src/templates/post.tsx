@@ -5,31 +5,47 @@ import { graphql } from "gatsby"
 
 export default ({ data }) => {
   const post: {
-    frontmatter: {
-      repo: string
-      title: string
-      date: string
-      site: string
+    id: string
+    title: string
+    childMarkdownRemark: {
+      excerpt: string
+      html: string
     }
-    html: string
-    excerpt: string
-  } = data.markdownRemark
+    properties: {
+      Created: {
+        value: Date
+      }
+      Author: {
+        value: {
+          name: string
+        }
+      }
+      GitHub_URL: {
+        value: string
+      }
+      Site: {
+        value: string
+      }
+    }
+  } = data.notion
 
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} description={post.excerpt} />
+      <SEO title={post.title} description={post.childMarkdownRemark.excerpt} />
       <article className="min-h-full min-w-full prose">
-        <h1>{post.frontmatter.title}</h1>
-        <h4>{post.frontmatter.date}</h4>
+        <h1>{post.title}</h1>
+        <h4>{post.properties.Created.value}</h4>
         <ul className="p-0 space-y-2 list-none">
           <li className="list-none">
-            <a href={"https://github.com/jamesj0717/" + post.frontmatter.repo}>
-              {"https://github.com/jamesj0717/" + post.frontmatter.repo}
+            <a href={post.properties.GitHub_URL.value}>
+              {post.properties.GitHub_URL.value}
             </a>
           </li>
-          {post.frontmatter.site !== null ? (
+          {post.properties.Site.value !== null ? (
             <li className="list-none">
-              <a href={post.frontmatter.site}>{post.frontmatter.site}</a>
+              <a href={post.properties.Site.value}>
+                {post.properties.Site.value}
+              </a>
             </li>
           ) : (
             <> </>
@@ -38,7 +54,7 @@ export default ({ data }) => {
         <hr />
         <div
           dangerouslySetInnerHTML={{
-            __html: post.html,
+            __html: post.childMarkdownRemark.html,
           }}
         ></div>
       </article>
@@ -48,15 +64,29 @@ export default ({ data }) => {
 
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      frontmatter {
-        title
-        site
-        repo
-        date(formatString: "MMMM DD, YYYY")
+    notion(title: { eq: $slug }) {
+      id
+      title
+      childMarkdownRemark {
+        excerpt
+        html
       }
-      html
-      excerpt
+      properties {
+        Created {
+          value(formatString: "MMMM DD, YYYY")
+        }
+        Author {
+          value {
+            name
+          }
+        }
+        GitHub_URL {
+          value
+        }
+        Site {
+          value
+        }
+      }
     }
   }
 `

@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `James Johnson`,
     description: `My Personal Site for showing off what I am working on.`,
-    author: `@jamesjohnsondev`,
+    author: `@jamesj_dev`,
   },
   proxy: {
     prefix: "/admin",
@@ -31,13 +31,13 @@ module.exports = {
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `mdpages`,
-        path: `${__dirname}/src/mdpages`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `mdpages`,
+    //     path: `${__dirname}/src/mdpages`,
+    //   },
+    // },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -51,6 +51,15 @@ module.exports = {
         gfm: true,
         // Plugins configs
         plugins: [],
+      },
+    },
+    {
+      resolve: `gatsby-source-notion-api`,
+      options: {
+        token: `secret_9yHKUSigfRNwHFLKxeosuXF0FKr9LuF4K4mO2VOMann`,
+        databaseId: `e16af016f05f4af2891a171c4b1372b8`,
+        propsToFrontmatter: true,
+        lowerTitleLevel: true,
       },
     },
     `gatsby-plugin-postcss`,
